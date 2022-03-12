@@ -1,0 +1,35 @@
+.main__tabs {
+  height: 50px;
+}
+
+.ant-radio-group {
+  font-family: 'Open Sans', sans-serif;
+  font-style: normal;
+  font-weight: 600;
+  font-size: 12px;
+  line-height: 20px;
+
+  text-transform: uppercase;
+}
+
+.ant-radio-button-wrapper {
+  text-align: center;
+  padding-top: 15px;
+  padding-bottom: 15px;
+
+  font-family: 'Open Sans', sans-serif;
+  font-style: normal;
+  font-weight: 600;
+  font-size: 12px;
+  line-height: 20px;
+}
+
+.ant-radio-button-wrapper:first-child {
+  border-bottom-left-radius: 5px;
+  border-top-left-radius: 5px;
+}
+
+.ant-radio-button-wrapper:last-child {
+  border-bottom-right-radius: 5px;
+  border-top-right-radius: 5px;
+}

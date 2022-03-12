@@ -1,0 +1,61 @@
+.filters__card {
+  background: #ffffff;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  border-radius: 5px;
+}
+
+.filters__header {
+  font-family: 'Open Sans', sans-serif;
+  font-style: normal;
+  font-weight: 600;
+  font-size: 12px;
+  line-height: 12px;
+
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+
+  color: #4a4a4a;
+
+  padding: 20px;
+}
+
+.check_all {
+  padding: 10px 20px;
+}
+
+.check_all,
+.ant-checkbox-wrapper {
+  font-family: 'Open Sans', sans-serif;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 13px;
+  line-height: 20px;
+
+  color: #4a4a4a;
+}
+
+.ant-checkbox-group-item {
+  padding: 10px 20px;
+}
+
+.ant-checkbox-group-item:last-child {
+  padding: 10px 20px 20px;
+}
+
+.ant-checkbox-inner {
+  width: 20px;
+  height: 20px;
+}
+
+.ant-card-body {
+  padding: 0;
+}
+
+.ant-checkbox-wrapper {
+  width: 100%;
+  height: 100%;
+}
+
+.ant-checkbox-wrapper:hover {
+  background-color: #f1fcff;
+}
