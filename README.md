@@ -1,2 +1,2 @@
 # Aviasales
-https://aviasales-bay.vercel.app
+https://aviasale-kohl.vercel.app
