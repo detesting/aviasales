@@ -23,30 +23,13 @@ export default function TicketList() {
 
   const countTickets = useSelector((state) => state.tickets.countTickets);
 
+  const filters = ['Без пересадок', '1 пересадка', '2 пересадки', '3 пересадки'];
+
   const filterStops = (count) => {
     if (count <= 3) {
       for (let i = 0; i < filterValue.length; i++) {
-        switch (filterValue[i]) {
-          case 'Без пересадок':
-            if (count === 0) {
-              return true;
-            }
-            break;
-          case '1 пересадка':
-            if (count === 1) {
-              return true;
-            }
-            break;
-          case '2 пересадки':
-            if (count === 2) {
-              return true;
-            }
-            break;
-          case '3 пересадки':
-            if (count === 3) {
-              return true;
-            }
-            break;
+        if (filterValue[i].includes(filters[count])) {
+          return true;
         }
       }
       return false;
@@ -86,7 +69,7 @@ export default function TicketList() {
       {loading ? (
         <Loading />
       ) : (
-        <div className="ticket_list">
+        <div className='ticket_list'>
           <List
             grid={{ gutter: 16, column: 1 }}
             dataSource={viewTickets}
@@ -96,7 +79,7 @@ export default function TicketList() {
               </List.Item>
             )}
           />
-          <Button type="primary" className="button_add" onClick={() => dispatch(addFiveTickets())}>
+          <Button type='primary' className='button_add' onClick={() => dispatch(addFiveTickets())}>
             Показать еще 5 билетов!
           </Button>
         </div>

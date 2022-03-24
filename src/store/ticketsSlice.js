@@ -1,6 +1,7 @@
 import { createAsyncThunk, createSlice } from '@reduxjs/toolkit';
 import axios from 'axios';
-
+// https://aviasales-test-api.kata.academy
+//https://front-test.beta.aviasales.ru
 async function findTickets(id) {
   let { data } = await axios.get(`https://front-test.beta.aviasales.ru/tickets?searchId=${id}`);
   return data;
@@ -8,15 +9,7 @@ async function findTickets(id) {
 
 export const getTickets = createAsyncThunk('tickets/getTickets', async function getTicketsAll() {
   let { data: searchID } = await axios.get('https://front-test.beta.aviasales.ru/search');
-  let data = {
-    stop: false,
-  };
-  try {
-    data = await findTickets(searchID.searchId);
-  } catch (e) {
-    let { data: searchIDnew } = await axios.get('https://front-test.beta.aviasales.ru/search');
-    data = await findTickets(searchIDnew.searchId);
-  }
+  let data = await findTickets(searchID.searchId);
   try {
     while (!data.stop) {
       let newData = await findTickets(searchID.searchId);
@@ -24,7 +17,7 @@ export const getTickets = createAsyncThunk('tickets/getTickets', async function 
       data.stop = newData.stop;
     }
   } catch (e) {
-    await getTicketsAll();
+    return data.tickets;
   }
   return data.tickets;
 });
