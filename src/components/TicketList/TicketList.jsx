@@ -69,7 +69,7 @@ export default function TicketList() {
       {loading ? (
         <Loading />
       ) : (
-        <div className='ticket_list'>
+        <div className="ticket_list">
           <List
             grid={{ gutter: 16, column: 1 }}
             dataSource={viewTickets}
@@ -79,7 +79,7 @@ export default function TicketList() {
               </List.Item>
             )}
           />
-          <Button type='primary' className='button_add' onClick={() => dispatch(addFiveTickets())}>
+          <Button type="primary" className="button_add" onClick={() => dispatch(addFiveTickets())}>
             Показать еще 5 билетов!
           </Button>
         </div>
